@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Gadget Shop</title>
+    <link rel="stylesheet" href="style.css">
+     <script src="https://unpkg.com/vue@3.0.11/dist/vue.global.js"></script>
+</head>
+<body>
+    <script src="./main.js"></script>
+  <script src="./components/CartDisplay.js"></script>
+  <script src="./components/ReviewForm.js"></script>
+    <div id="app">
+       <div class="cart">
+      <cart-display 
+    :cart="cart" 
+    :cart-total="cartTotal" 
+    :discounted-total="discountedTotal"
+    @remove-from-cart="removeFromCart"
+    @update-quantity="updateQuantity"> </cart-display>
+    </div>
+<h1> {{ name }}</h1>
+<p>{{ description }}</p>
+<div class="gadget-container">
+ <gadget-display 
+    v-for="gadget in gadgets" 
+    :key="gadget.id"
+    :gadget="gadget" 
+    @add-to-cart="addToCart"
+    @add-review="addReview"> 
+</gadget-display>
+</div>
+    </div>
+      <script src="./components/GadgetDisplay.js"></script>
+    <script>
+          const mountedApp = app.mount('#app')
+    </script>
+</body>
+</html>
