@@ -20,7 +20,7 @@ app.component("gadget-display", {
             </ul>
             <p v-else>Aucun avis pour ce produit.</p> </div>
 
-        <review-form @add-review="saveReview"></review-form>
+        <review-form @add-review="addReview"></review-form>
     </div>
     `,
     methods: {
