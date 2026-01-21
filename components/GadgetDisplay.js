@@ -4,7 +4,7 @@ app.component("gadget-display", {
     /*html*/`
     <div class="gadget">
         <img v-bind:src="gadget.image" alt="Gadget">
-        <h2>{{ gadget.name }}</h2>
+        <h2>{{ gadget.nom }}</h2>
         <p>Prix : {{ gadget.prix }}UAH</p>
         <p :class="{'in-stock': gadget.inStock, 'out-of-stock': !gadget.inStock}">
             {{ gadget.inStock ? '✅ En stock' : '❌ En rupture de stock' }}
@@ -15,7 +15,7 @@ app.component("gadget-display", {
             <ul v-if="gadget.reviews.length">
                 <li v-for="(review, index) in gadget.reviews" :key="index">
                     <strong>{{ review.name }}</strong> - {{ review.rating }}☆
-                    <p>"{{ review.comment }}"</p>
+                    <p>"{{ review.review }}"</p>
                 </li>
             </ul>
             <p v-else>Aucun avis pour ce produit.</p> </div>
